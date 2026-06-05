@@ -1,4 +1,3 @@
-import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -13,9 +12,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Experience />
       <Projects />
-      <Skills />
       <Contact />
     </>
   );
