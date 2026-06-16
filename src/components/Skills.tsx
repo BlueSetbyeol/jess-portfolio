@@ -88,9 +88,9 @@ const Skills: React.FC = () => {
           02 — Skills
         </span>
         <h2
+          className="text-[clamp(2rem,5vw,3rem)]"
           style={{
             fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 800,
             letterSpacing: "-0.03em",
             lineHeight: 1,

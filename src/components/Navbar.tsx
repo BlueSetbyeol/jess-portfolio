@@ -1,4 +1,11 @@
-import React from "react";
+import { Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -8,58 +15,32 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   return (
-    <nav
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-        background: "rgba(247,244,239,0.88)",
-        borderBottom: "1px solid rgba(26,23,20,0.08)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 clamp(1.25rem, 5vw, 3.5rem)",
-        height: "58px",
-        backdropFilter: "blur(12px)",
-      }}
-    >
+    <nav className="sticky top-0 z-100 bg-secondary border-b-border flex items-center justify-between h-[4em] backdrop-blur-md py-0 px-[clamp(1.25rem,5vw,3.5rem)]">
       <a
         href="#hero"
-        style={{
-          fontFamily: "'Syne', sans-serif",
-          fontWeight: 800,
-          fontSize: "1.05rem",
-          color: "var(--fg)",
-          textDecoration: "none",
-          letterSpacing: "-0.02em",
-        }}
+        className="text-[1.05rem] text-font-serif font-bold decoration-0 tracking-tight"
       >
-        Jessica<span style={{ color: "var(--accent)" }}>.</span>
+        Jessica<span className="text-primary">.</span>
       </a>
 
       <ul
+        className="md:flex list-none hidden"
         style={{
-          display: "flex",
           gap: "clamp(1.25rem, 3vw, 2.25rem)",
-          listStyle: "none",
         }}
       >
         {navLinks.map(({ label, href }) => (
-          <li key={href}>
+          <li key={href} className="md:block hidden">
             <a
               href={href}
+              className="text-[0.78rem] uppercase decoration-0 tracking-wide"
               style={{
-                textDecoration: "none",
-                fontSize: "0.78rem",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "var(--muted)",
                 transition: "color 0.2s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--accent)")
+                (e.currentTarget.style.color = "var(--primary)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = "var(--muted)")
@@ -70,8 +51,34 @@ const Navbar: React.FC = () => {
           </li>
         ))}
       </ul>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild className="md:hidden mr-2">
+          <Button variant="secondary">
+            <Menu />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="z-120">
+          {navLinks.map(({ label, href }) => (
+            <DropdownMenuItem key={href}>
+              <a
+                href={href}
+                className="text-[0.78rem] uppercase decoration-0 tracking-wide"
+                style={{
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--muted)")
+                }
+              >
+                {label}
+              </a>
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </nav>
   );
-};
-
-export default Navbar;
+}
