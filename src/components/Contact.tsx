@@ -1,32 +1,5 @@
-import React from "react";
-
-// ─── EDIT YOUR INFO HERE ──────────────────────────────────────────────────────
-const CONTACT = {
-  preTitle: "Let's build something",
-  title: "great together.",
-  sub: "I'm actively looking for my first junior dev role, after finishing my internship. If that sounds like you, I'd love to connect.",
-  links: [
-    {
-      label: "jessica.couble@gmail.com",
-      href: "mailto:jessica.couble@gmail.com",
-      variant: "email",
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/BlueSetbyeol/",
-      variant: "neutral",
-    },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/jessica-couble-5668b545/",
-      variant: "green",
-    },
-    { label: "Resume", href: "#", variant: "neutral" },
-  ],
-};
-// ─────────────────────────────────────────────────────────────────────────────
-
-type LinkVariant = "email" | "green" | "neutral";
+import { CONTACT } from "../utils/informations";
+import type { LinkVariant } from "../utils/types";
 
 const linkStyles: Record<LinkVariant, React.CSSProperties> = {
   email: { background: "var(--accent)", color: "#fff" },
@@ -34,7 +7,7 @@ const linkStyles: Record<LinkVariant, React.CSSProperties> = {
   neutral: { background: "rgba(26,23,20,0.07)", color: "var(--fg)" },
 };
 
-const Contact: React.FC = () => {
+export default function Contact() {
   return (
     <section id="contact" style={{ padding: "clamp(4rem, 8vw, 7rem) 0" }}>
       <div style={{ marginBottom: "2.75rem" }}>
@@ -53,9 +26,9 @@ const Contact: React.FC = () => {
           05 — Contact
         </span>
         <h2
+          className="text-[clamp(2rem,5vw,3rem)]"
           style={{
             fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 800,
             letterSpacing: "-0.03em",
             lineHeight: 1,
@@ -156,6 +129,4 @@ const Contact: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Contact;
+}

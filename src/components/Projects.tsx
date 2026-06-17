@@ -1,63 +1,6 @@
-import React, { useState } from "react";
-
-type BannerVariant = "accent" | "green" | "blue";
-
-interface Project {
-  title: string;
-  description: string;
-  stack: string[];
-  banner: BannerVariant;
-  liveUrl: string;
-  githubUrl: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    title: "City Canva",
-    description:
-      "A student project that aim to accompany you on your trail through the streets of the world. Identify the city you want to visit and discover the superbe sight of Street Art.",
-    stack: ["React", "TypeScript", "Express js", "Leaflet map"],
-    banner: "accent",
-    liveUrl: "https://new-city-canvas.jessica-couble.com/",
-    githubUrl: "https://github.com/BlueSetbyeol/New_City_Canvas",
-  },
-  {
-    title: "Pokemonster S.A.P.",
-    description:
-      "A project made as a fun little test to learn Next js. The aim would be to save pokemon and help them find a good home in a world of trading little monster for fun. A bit like a shelter.",
-    stack: ["Next js", "Tailwind"],
-    banner: "green",
-    liveUrl: "https://pokemonster-eta.vercel.app/",
-    githubUrl: "https://github.com/BlueSetbyeol/pokemonster_sap",
-  },
-  {
-    title: "WikiData",
-    description:
-      "As a voluntary help, I took part in this project as a Front End developper and helped build it up to today's state. Working with a real and experienced Backend developper as well as a client kind of partener was a new and rich experience that I very much appreciated. The aim of the web app was to help French people answer to their questions regarding numbers and stats on certain element. We sadly had to stop without completing the idea as less and less volunteer were able to give time.",
-    stack: ["React js", "CSS", "Material UI"],
-    banner: "blue",
-    liveUrl: "https://wikidata.onrender.com/",
-    githubUrl: "https://github.com/association-work/stats_visualiser",
-  },
-  {
-    title: "Featzy",
-    description:
-      "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
-    stack: ["React js", "Tailwind", "ShadCN", "Google map", "Auth0"],
-    banner: "blue",
-    liveUrl: "#",
-    githubUrl: "https://github.com/BlueSetbyeol/featzy_front",
-  },
-  {
-    title: "Simply Fact",
-    description:
-      "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
-    stack: ["Laravel", "React", "Material UI", "S3"],
-    banner: "blue",
-    liveUrl: "#",
-    githubUrl: "https://github.com/BlueSetbyeol/simplyfact",
-  },
-];
+import { useState } from "react";
+import type { BannerVariant } from "../utils/types";
+import { PROJECTS } from "../utils/informations";
 
 const bannerBg: Record<BannerVariant, string> = {
   accent: "var(--accent-light)",
@@ -71,8 +14,9 @@ const circleColor: Record<BannerVariant, string> = {
   blue: "#3a7bd5",
 };
 
-const Projects: React.FC = () => {
+export default function Projects() {
   const [hovered, setHovered] = useState<number | null>(null);
+  console.log(hovered);
 
   return (
     <section id="projects" style={{ padding: "clamp(4rem, 8vw, 7rem) 0" }}>
@@ -92,9 +36,9 @@ const Projects: React.FC = () => {
           04 — Projects
         </span>
         <h2
+          className="text-[clamp(2rem,5vw,3rem)]"
           style={{
             fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 800,
             letterSpacing: "-0.03em",
             lineHeight: 1,
@@ -113,20 +57,10 @@ const Projects: React.FC = () => {
       >
         {PROJECTS.map((project, i) => (
           <div
+            className="translate-y-0 hover:-translate-y-0.75 border-1.5 rounded-4 border-muted hover:border-accent bg-muted overflow-hidden transition-[transform,border-color] duration-[250ms]"
             key={project.title}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
-            style={{
-              borderRadius: "16px",
-              overflow: "hidden",
-              border:
-                hovered === i
-                  ? "1.5px solid var(--accent)"
-                  : "1.5px solid rgba(26,23,20,0.09)",
-              background: "var(--bg1)",
-              transform: hovered === i ? "translateY(-3px)" : "translateY(0)",
-              transition: "transform 0.25s, border-color 0.25s",
-            }}
           >
             {/* Banner */}
             <div
@@ -262,6 +196,4 @@ const Projects: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

@@ -1,48 +1,6 @@
-import React from "react";
-const ABOUT = {
-  paragraphs: [
-    <>
-      I'm a new developer, changing career after much experiences in diverses
-      area, who fell in love with building things and especially on the web.
-      What started as pure curiosity about{" "}
-      <strong style={{ color: "var(--fg)", fontWeight: 500 }}>
-        how websites actually work
-      </strong>{" "}
-      became a genuine passion for crafting experiences that feel both intuitive
-      and alive.
-    </>,
-    <>
-      I embrace both{" "}
-      <strong style={{ color: "var(--fg)", fontWeight: 500 }}>
-        manual and AI-assisted
-      </strong>{" "}
-      but also vibe-coding workflows — Cursor, Claude, prompt engineering — as
-      tools in my stack. I believe the best developers leverage everything
-      available to think bigger and ship faster.
-    </>,
-    <>
-      Looking for a junior role where I can grow fast, contribute from day one,
-      and work alongside a team that cares about quality and craft.
-    </>,
-  ],
-  facts: [
-    { label: "Location", value: "Lyon, France", accent: false },
-    {
-      label: "Background",
-      value: "Self-taught + Bootcamp · 2 years",
-      accent: false,
-    },
-    { label: "Focus", value: "Full Stack · AI-assisted dev", accent: false },
-    { label: "Languages", value: "French · English · Korean", accent: false },
-    {
-      label: "Status",
-      value: "● Available from 2026, September 1st",
-      accent: true,
-    },
-  ],
-};
+import { ABOUT } from "../utils/informations";
 
-const About: React.FC = () => {
+export default function About() {
   return (
     <section id="about" style={{ padding: "clamp(4rem, 8vw, 7rem) 0" }}>
       <div style={{ marginBottom: "2.75rem" }}>
@@ -61,9 +19,9 @@ const About: React.FC = () => {
           01 — About me
         </span>
         <h2
+          className="text-[clamp(2rem,5vw,3rem)]"
           style={{
             fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 800,
             letterSpacing: "-0.03em",
             lineHeight: 1,
@@ -135,6 +93,4 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default About;
+}

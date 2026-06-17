@@ -1,66 +1,35 @@
-import React from "react";
-
-// ─── EDIT YOUR INFO HERE ──────────────────────────────────────────────────────
-const HERO = {
-  eyebrow: "Junior developer — available now",
-  line1: "Building",
-  line2: "the web with",
-  italic: "curiosity.",
-  sub: "I craft clean, expressive interfaces and embrace AI-assisted workflows to ship better products, faster. Looking for my first role in a team that builds boldly.",
-  tags: [
-    { label: "React · TypeScript", variant: "accent" },
-    { label: "Laravel", variant: "neutral" },
-    { label: "Next", variant: "neutral" },
-    { label: "Node", variant: "accent" },
-    { label: "AI-assisted dev", variant: "green" },
-    { label: "Frontend", variant: "neutral" },
-    { label: "Backend", variant: "neutral" },
-    { label: "Full Stack", variant: "neutral" },
-  ],
-  ctaPrimary: { label: "See my work", href: "#projects" },
-  ctaSecondary: { label: "Let's talk", href: "#contact" },
-};
-// ─────────────────────────────────────────────────────────────────────────────
-
-type TagVariant = "accent" | "green" | "neutral";
+import { HERO } from "../utils/informations";
+import type { TagVariant } from "../utils/types";
 
 const tagStyles: Record<TagVariant, React.CSSProperties> = {
-  accent: { background: "var(--accent-light)", color: "var(--accent)" },
-  green: { background: "var(--green-light)", color: "var(--green)" },
-  neutral: { background: "rgba(26,23,20,0.07)", color: "var(--muted)" },
+  primary: {
+    background: "#fff",
+    color: "#000",
+  },
+  secondary: {
+    background: "var(--secondary)",
+    color: "var(--primary-foreground)",
+  },
+  accent: {
+    background: "var(--accent)",
+    color: "var(--primary-foreground)",
+  },
+  muted: {
+    background: "#B69EEE",
+    color: "var(--primary-foreground)",
+  },
 };
 
-const Hero: React.FC = () => {
+export default function Hero() {
   return (
     <section
       id="hero"
-      style={{
-        minHeight: "91vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        paddingTop: "5rem",
-        paddingBottom: "4rem",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      className="min-h-[91vh] flex flex-col justify-center pt-20 pb-16 relative overflow-hidden"
     >
       <div
+        className="absolute top-[50%] left-0 right-0 text-transparent whitespace-nowrap tracking-tight pointer-events-none font-extrabold select-none text-[clamp(6rem,20vw,14rem)] -translate-y-1/2 font-syne"
         style={{
-          position: "absolute",
-          top: "50%",
-          left: 0,
-          right: 0,
-          fontFamily: "'Syne', sans-serif",
-          fontSize: "clamp(6rem, 20vw, 14rem)",
-          fontWeight: 800,
-          color: "transparent",
           WebkitTextStroke: "1.5px rgba(26,23,20,0.07)",
-          whiteSpace: "nowrap",
-          pointerEvents: "none",
-          transform: "translateY(-50%)",
-          letterSpacing: "-0.03em",
-          userSelect: "none",
           animation: "marquee 22s linear infinite",
         }}
       >
@@ -78,102 +47,37 @@ const Hero: React.FC = () => {
         }
       `}</style>
 
-      <div
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          fontSize: "0.78rem",
-          letterSpacing: "0.07em",
-          textTransform: "uppercase",
-          color: "var(--muted)",
-          marginBottom: "1.75rem",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="inline-flex items-center gap-3 text-[0.78rem] text-accent-foreground mb-7 pl-4 relative z-1 uppercase tracking-wide">
         <span
+          className="w-2 h-2 rounded-[50%] bg-primary inline-block"
           style={{
-            width: 7,
-            height: 7,
-            borderRadius: "50%",
-            background: "var(--green)",
-            display: "inline-block",
             animation: "pulse 2.2s ease-in-out infinite",
           }}
         />
         {HERO.eyebrow}
       </div>
 
-      <h1
-        style={{
-          fontFamily: "'Syne', sans-serif",
-          fontWeight: 800,
-          fontSize: "clamp(3rem, 9vw, 6.5rem)",
-          lineHeight: 0.95,
-          letterSpacing: "-0.03em",
-          marginBottom: "1.5rem",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <h1 className="tracking-tight font-extrabold mb-6 relative z-1 leading-[0.95] text-[clamp(3rem,9vw,6.5rem)]">
         {HERO.line1}
         <br />
         {HERO.line2}
         <br />
-        <span
-          style={{
-            fontFamily: "'Instrument Serif', serif",
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: "0.92em",
-            color: "var(--accent)",
-          }}
-        >
+        <span className="text-[0.92em] text-primary font-medium italic font-mono">
           {HERO.italic}
         </span>
       </h1>
 
-      <p
-        style={{
-          fontSize: "1.05rem",
-          color: "var(--muted)",
-          maxWidth: "460px",
-          fontWeight: 300,
-          marginBottom: "2.5rem",
-          lineHeight: 1.85,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <p className="text-[1.05em] text-muted-foreground font-light pb-10 relative z-1 px-4 leading-[1.85]">
         {HERO.sub}
       </p>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          flexWrap: "wrap",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="flex flex-wrap relative z-1 gap-2 px-4">
         <a
           href={HERO.ctaPrimary.href}
-          style={{
-            background: "var(--fg)",
-            color: "var(--bg1)",
-            border: "none",
-            borderRadius: "12px",
-            padding: "0.75rem 1.75rem",
-            fontSize: "0.875rem",
-            fontWeight: 400,
-            textDecoration: "none",
-            transition: "transform 0.15s, background 0.2s",
-            display: "inline-block",
-          }}
+          className="rounded-[12px] px-7 py-3 border-0 text-[0.875rem] text-primary inline-block bg-muted decoration-0 transition-[transform,background] duration-[150ms,200ms]"
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "var(--accent)";
+            e.currentTarget.style.color = "black";
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
@@ -185,20 +89,10 @@ const Hero: React.FC = () => {
         </a>
         <a
           href={HERO.ctaSecondary.href}
-          style={{
-            background: "transparent",
-            color: "var(--fg)",
-            border: "1.5px solid rgba(26,23,20,0.2)",
-            borderRadius: "12px",
-            padding: "0.75rem 1.75rem",
-            fontSize: "0.875rem",
-            textDecoration: "none",
-            transition: "border-color 0.2s, color 0.2s, transform 0.15s",
-            display: "inline-block",
-          }}
+          className="rounded-[12px] px-7 py-3 border-2 border-background text-[0.875rem] inline-block bg-transparent decoration-0 transition-[border-color,color,transform] duration-[200ms,200ms,150ms]"
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "var(--green)";
-            e.currentTarget.style.color = "var(--green)";
+            e.currentTarget.style.borderColor = "var(--secondary)";
+            e.currentTarget.style.color = "var(--secondary)";
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
@@ -211,25 +105,12 @@ const Hero: React.FC = () => {
         </a>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.5rem",
-          marginTop: "2.75rem",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="w-full px-4 flex flex-wrap gap-2 mt-11 relative z-1">
         {HERO.tags.map((tag) => (
           <span
             key={tag.label}
+            className="text-[0.73rem] py-[0.3rem] px-[0.85rem] rounded-[100px] font-sans tracking-tighter"
             style={{
-              fontSize: "0.73rem",
-              padding: "0.3rem 0.85rem",
-              borderRadius: "100px",
-              fontFamily: "'Syne', sans-serif",
-              letterSpacing: "0.04em",
               ...tagStyles[tag.variant as TagVariant],
             }}
           >
@@ -239,6 +120,4 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
