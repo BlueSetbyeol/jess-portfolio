@@ -27,9 +27,8 @@ export default function Hero() {
       className="min-h-[91vh] flex flex-col justify-center pt-20 pb-16 relative overflow-hidden"
     >
       <div
-        className="absolute top-[50%] left-0 right-0 text-transparent whitespace-nowrap tracking-tight pointer-events-none font-extrabold select-none text-[clamp(6rem,20vw,14rem)] -translate-y-1/2"
+        className="absolute top-[50%] left-0 right-0 text-transparent whitespace-nowrap tracking-tight pointer-events-none font-extrabold select-none text-[clamp(6rem,20vw,14rem)] -translate-y-1/2 font-syne"
         style={{
-          fontFamily: "'Syne', sans-serif",
           WebkitTextStroke: "1.5px rgba(26,23,20,0.07)",
           animation: "marquee 22s linear infinite",
         }}

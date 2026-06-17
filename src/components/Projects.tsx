@@ -16,6 +16,7 @@ const circleColor: Record<BannerVariant, string> = {
 
 export default function Projects() {
   const [hovered, setHovered] = useState<number | null>(null);
+  console.log(hovered);
 
   return (
     <section id="projects" style={{ padding: "clamp(4rem, 8vw, 7rem) 0" }}>
