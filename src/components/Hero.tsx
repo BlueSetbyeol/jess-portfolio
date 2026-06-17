@@ -2,9 +2,22 @@ import { HERO } from "../utils/informations";
 import type { TagVariant } from "../utils/types";
 
 const tagStyles: Record<TagVariant, React.CSSProperties> = {
-  accent: { background: "var(--accent-light)", color: "var(--accent)" },
-  green: { background: "var(--green-light)", color: "var(--green)" },
-  neutral: { background: "rgba(26,23,20,0.07)", color: "var(--muted)" },
+  primary: {
+    background: "#fff",
+    color: "#000",
+  },
+  secondary: {
+    background: "var(--secondary)",
+    color: "var(--primary-foreground)",
+  },
+  accent: {
+    background: "var(--accent)",
+    color: "var(--primary-foreground)",
+  },
+  muted: {
+    background: "#B69EEE",
+    color: "var(--primary-foreground)",
+  },
 };
 
 export default function Hero() {
@@ -35,7 +48,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <div className="inline-flex items-center gap-3 text-[0.78rem] text-accent-foreground mb-7 relative z-1 uppercase tracking-wide">
+      <div className="inline-flex items-center gap-3 text-[0.78rem] text-accent-foreground mb-7 pl-4 relative z-1 uppercase tracking-wide">
         <span
           className="w-2 h-2 rounded-[50%] bg-primary inline-block"
           style={{
@@ -50,59 +63,22 @@ export default function Hero() {
         <br />
         {HERO.line2}
         <br />
-        <span
-          style={{
-            fontFamily: "'Instrument Serif', serif",
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: "0.92em",
-            color: "var(--accent)",
-          }}
-        >
+        <span className="text-[0.92em] text-primary font-medium italic font-mono">
           {HERO.italic}
         </span>
       </h1>
 
-      <p
-        style={{
-          fontSize: "1.05rem",
-          color: "var(--muted)",
-          maxWidth: "460px",
-          fontWeight: 300,
-          marginBottom: "2.5rem",
-          lineHeight: 1.85,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <p className="text-[1.05em] text-muted-foreground font-light pb-10 relative z-1 px-4 leading-[1.85]">
         {HERO.sub}
       </p>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          flexWrap: "wrap",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="flex flex-wrap relative z-1 gap-2 px-4">
         <a
           href={HERO.ctaPrimary.href}
-          style={{
-            background: "var(--fg)",
-            color: "var(--bg1)",
-            border: "none",
-            borderRadius: "12px",
-            padding: "0.75rem 1.75rem",
-            fontSize: "0.875rem",
-            fontWeight: 400,
-            textDecoration: "none",
-            transition: "transform 0.15s, background 0.2s",
-            display: "inline-block",
-          }}
+          className="rounded-[12px] px-7 py-3 border-0 text-[0.875rem] text-primary inline-block bg-muted decoration-0 transition-[transform,background] duration-[150ms,200ms]"
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "var(--accent)";
+            e.currentTarget.style.color = "black";
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
@@ -114,20 +90,10 @@ export default function Hero() {
         </a>
         <a
           href={HERO.ctaSecondary.href}
-          style={{
-            background: "transparent",
-            color: "var(--fg)",
-            border: "1.5px solid rgba(26,23,20,0.2)",
-            borderRadius: "12px",
-            padding: "0.75rem 1.75rem",
-            fontSize: "0.875rem",
-            textDecoration: "none",
-            transition: "border-color 0.2s, color 0.2s, transform 0.15s",
-            display: "inline-block",
-          }}
+          className="rounded-[12px] px-7 py-3 border-2 border-background text-[0.875rem] inline-block bg-transparent decoration-0 transition-[border-color,color,transform] duration-[200ms,200ms,150ms]"
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "var(--green)";
-            e.currentTarget.style.color = "var(--green)";
+            e.currentTarget.style.borderColor = "var(--secondary)";
+            e.currentTarget.style.color = "var(--secondary)";
             e.currentTarget.style.transform = "translateY(-1px)";
           }}
           onMouseLeave={(e) => {
@@ -140,25 +106,12 @@ export default function Hero() {
         </a>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.5rem",
-          marginTop: "2.75rem",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="w-full px-4 flex flex-wrap gap-2 mt-11 relative z-1">
         {HERO.tags.map((tag) => (
           <span
             key={tag.label}
+            className="text-[0.73rem] py-[0.3rem] px-[0.85rem] rounded-[100px] font-sans tracking-tighter"
             style={{
-              fontSize: "0.73rem",
-              padding: "0.3rem 0.85rem",
-              borderRadius: "100px",
-              fontFamily: "'Syne', sans-serif",
-              letterSpacing: "0.04em",
               ...tagStyles[tag.variant as TagVariant],
             }}
           >
