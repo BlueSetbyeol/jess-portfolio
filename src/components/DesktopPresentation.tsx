@@ -10,10 +10,14 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { useState } from "react";
 import Who from "./Who";
 import Contact from "./Contact";
+import Education from "./Education";
+import Experiences from "./Experiences";
 
 export default function DesktopPresentation() {
   const [open, setOpen] = useState(false);
   const [openContact, setOpenContact] = useState(false);
+  const [openEducation, setOpenEducation] = useState(false);
+  const [openExperiences, setOpenExperiences] = useState(false);
 
   return (
     <section className="hidden md:flex gap-4">
@@ -41,9 +45,11 @@ export default function DesktopPresentation() {
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
+        onClick={() => setOpenExperiences(true)}
       >
         <BicepsFlexed className="size-8 font-light" />
       </Button>
+      <Experiences open={openExperiences} onOpenChange={setOpenExperiences} />
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
@@ -53,9 +59,11 @@ export default function DesktopPresentation() {
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
+        onClick={() => setOpenEducation(true)}
       >
         <GraduationCap className="size-8 font-light" />
       </Button>
+      <Education open={openEducation} onOpenChange={setOpenEducation} />
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"

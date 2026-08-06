@@ -29,7 +29,7 @@ export default function Contact({ open, onOpenChange }: ContactProps) {
       <SheetContent
         showCloseButton={false}
         side="right"
-        className="data-[side=left]:w-5/6 data-[side=left]:md:w-3/4"
+        className="data-[side=right]:w-5/6"
       >
         <SheetHeader>
           <SheetTitle>Let's say `Hello`</SheetTitle>
