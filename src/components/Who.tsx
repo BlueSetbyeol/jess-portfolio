@@ -18,7 +18,7 @@ export default function Who({ open, onOpenChange }: WhoProps) {
       <SheetContent
         showCloseButton={false}
         side="left"
-        className="data-[side=left]:w-5/6"
+        className="data-[side=left]:w-5/6 data-[side=left]:md:w-3/4"
       >
         <SheetHeader>
           <SheetTitle>Jessica Couble</SheetTitle>
@@ -53,11 +53,11 @@ export default function Who({ open, onOpenChange }: WhoProps) {
                   available to think bigger and ship faster.
                 </p>
               </>
-              <>
+              <p>
                 Looking for a junior role where I can grow fast, contribute from
                 day one, and work alongside a team that cares about quality and
                 craft.
-              </>
+              </p>
             </article>
             <h2 className="pt-6 text-chart-2">Informations :</h2>
             <div>

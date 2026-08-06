@@ -75,12 +75,9 @@ export const ABOUT = [
 ];
 
 export const CONTACT = {
-  preTitle: "Let's build something",
-  title: "great together.",
-  sub: "I'm actively looking for my first junior dev role, after finishing my internship. If that sounds like you, I'd love to connect.",
   links: [
     {
-      label: "jessica.couble@gmail.com",
+      label: "Mail",
       href: "mailto:jessica.couble@gmail.com",
       variant: "email",
     },
@@ -94,7 +91,6 @@ export const CONTACT = {
       href: "https://www.linkedin.com/in/jessica-couble-5668b545/",
       variant: "green",
     },
-    { label: "Resume", href: "#", variant: "neutral" },
   ],
 };
 

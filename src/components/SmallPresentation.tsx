@@ -8,20 +8,22 @@ import {
 import { Button } from "./ui/button";
 import { useState } from "react";
 import Who from "./Who";
+import Contact from "./Contact";
 
 export default function SmallPresentation() {
-  const [open, setOpen] = useState(false);
+  const [openWho, setOpenWho] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
 
   return (
     <section className="flex gap-4 md:hidden">
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
-        onClick={() => setOpen(true)}
+        onClick={() => setOpenWho(true)}
       >
         <SquareUser className="size-8 font-light" />
       </Button>
-      <Who open={open} onOpenChange={setOpen} />
+      <Who open={openWho} onOpenChange={setOpenWho} />
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
@@ -43,9 +45,11 @@ export default function SmallPresentation() {
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
+        onClick={() => setOpenContact(true)}
       >
         <Send className="size-8 font-light" />
       </Button>
+      <Contact open={openContact} onOpenChange={setOpenContact} />
     </section>
   );
 }
