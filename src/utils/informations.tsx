@@ -34,67 +34,45 @@ export const EXPERIENCE = [
 ];
 
 export const HERO = {
-  eyebrow: "Junior developer — available now",
+  eyebrow: "Web Developer - available now",
   line1: "Building",
   line2: "the web with",
   italic: "curiosity.",
   sub: "I craft clean, expressive interfaces and embrace AI-assisted workflows to ship better products, faster. Looking for my first role in a team that builds boldly.",
   tags: [
-    { label: "React · TypeScript", variant: "primary" },
-    { label: "Laravel", variant: "secondary" },
-    { label: "Next", variant: "accent" },
-    { label: "Node", variant: "primary" },
-    { label: "AI-assisted dev", variant: "muted" },
-    { label: "Frontend", variant: "secondary" },
-    { label: "Backend", variant: "accent" },
-    { label: "Full Stack", variant: "primary" },
+    { label: "HTML" },
+    { label: "CSS" },
+    { label: "JavaScript" },
+    { label: "React JS" },
+    { label: "TypeScript" },
+    { label: "Laravel" },
+    { label: "Next" },
+    { label: "Node" },
+    { label: "React Native" },
+    { label: "Frontend" },
+    { label: "Backend" },
+    { label: "Full Stack" },
+    { label: "AI-assisted dev" },
   ],
   ctaPrimary: { label: "See my work", href: "#projects" },
   ctaSecondary: { label: "Let's talk", href: "#contact" },
 };
 
-export const ABOUT = {
-  paragraphs: [
-    <>
-      I'm a new developer, changing career after much experiences in diverses
-      area, who fell in love with building things and especially on the web.
-      What started as pure curiosity about{" "}
-      <strong style={{ color: "var(--fg)", fontWeight: 500 }}>
-        how websites actually work
-      </strong>{" "}
-      became a genuine passion for crafting experiences that feel both intuitive
-      and alive.
-    </>,
-    <>
-      I embrace both{" "}
-      <strong style={{ color: "var(--fg)", fontWeight: 500 }}>
-        manual and AI-assisted
-      </strong>{" "}
-      but also vibe-coding workflows — Cursor, Claude, prompt engineering — as
-      tools in my stack. I believe the best developers leverage everything
-      available to think bigger and ship faster.
-    </>,
-    <>
-      Looking for a junior role where I can grow fast, contribute from day one,
-      and work alongside a team that cares about quality and craft.
-    </>,
-  ],
-  facts: [
-    { label: "Location", value: "Lyon, France", accent: false },
-    {
-      label: "Background",
-      value: "Self-taught + Bootcamp · 2 years",
-      accent: false,
-    },
-    { label: "Focus", value: "Full Stack · AI-assisted dev", accent: false },
-    { label: "Languages", value: "French · English · Korean", accent: false },
-    {
-      label: "Status",
-      value: "● Available from 2026, September 1st",
-      accent: true,
-    },
-  ],
-};
+export const ABOUT = [
+  { label: "Location", value: "Lyon, France · work from home", accent: false },
+  {
+    label: "Status",
+    value: "● Available from 2026, September 1st",
+    accent: true,
+  },
+  { label: "Focus", value: "Full Stack · Front End", accent: false },
+  {
+    label: "Background",
+    value: "Bootcamp · 2 years + Self-taught",
+    accent: false,
+  },
+  { label: "Languages", value: "French · English · Korean", accent: false },
+];
 
 export const CONTACT = {
   preTitle: "Let's build something",
@@ -163,7 +141,7 @@ export const PROJECTS: Project[] = [
       "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
     stack: ["React js", "Tailwind", "ShadCN", "Google map", "Auth0"],
     banner: "blue",
-    liveUrl: "#",
+    liveUrl: "https://featzy.jessica-couble.com/",
     githubUrl: "https://github.com/BlueSetbyeol/featzy_front",
   },
   {
@@ -172,7 +150,7 @@ export const PROJECTS: Project[] = [
       "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
     stack: ["Laravel", "React", "Material UI", "S3"],
     banner: "blue",
-    liveUrl: "#",
+    liveUrl: "https://simplyfact-production-m8wtgc.laravel.cloud/",
     githubUrl: "https://github.com/BlueSetbyeol/simplyfact",
   },
 ];
