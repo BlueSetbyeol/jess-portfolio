@@ -1,4 +1,7 @@
-export type BannerVariant = "accent" | "green" | "blue";
-export type TagVariant = "primary" | "secondary" | "accent" | "muted";
-
-export type LinkVariant = "email" | "green" | "neutral";
+export type Project = {
+  title: string;
+  description: string;
+  stack: string[];
+  liveUrl: string;
+  githubUrl: string;
+};
