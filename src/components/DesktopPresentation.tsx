@@ -8,16 +8,18 @@ import {
 import { Button } from "./ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { useState } from "react";
-import Who from "./Who";
-import Contact from "./Contact";
-import Education from "./Education";
-import Experiences from "./Experiences";
+import Who from "./porfolio/Who";
+import Contact from "./porfolio/Contact";
+import Education from "./porfolio/Education";
+import Experiences from "./porfolio/Experiences";
+import Projects from "./porfolio/Projects";
 
 export default function DesktopPresentation() {
   const [open, setOpen] = useState(false);
   const [openContact, setOpenContact] = useState(false);
   const [openEducation, setOpenEducation] = useState(false);
   const [openExperiences, setOpenExperiences] = useState(false);
+  const [openProjects, setOpenProjects] = useState(false);
 
   return (
     <section className="hidden md:flex gap-4">
@@ -53,9 +55,11 @@ export default function DesktopPresentation() {
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"
+        onClick={() => setOpenProjects(true)}
       >
         <Layers className="size-8 font-light" />
       </Button>
+      <Projects open={openProjects} onOpenChange={setOpenProjects} />
       <Button
         variant={"outline"}
         className="size-12 border-primary hover:bg-chart-4"

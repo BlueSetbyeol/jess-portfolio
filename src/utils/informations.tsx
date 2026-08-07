@@ -120,7 +120,7 @@ export const SCHOOL = {
 export const EXPERIENCE = {
   dev: [
     {
-      period: "2025/10 – Now",
+      period: "2025/2026",
       title: "Internship in Tool conception",
       org: "Top 10 Stratégie",
       desc: "Building tools that help the company in their specifique area, such as a CRM or a trend surveilling tool.",
