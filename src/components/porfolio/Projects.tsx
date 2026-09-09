@@ -36,19 +36,19 @@ export default function Projects({ open, onOpenChange }: ProjectsProps) {
             that I hope you will enjoy too
           </DialogDescription>
         </DialogHeader>
+        <p>Visual coming soon !</p>
         <section className="-mx-4 no-scrollbar max-h-[75vh] overflow-x-auto px-4 pb-4 flex flex-row gap-4 items-start w-full shrink-0">
-          <p>Visual coming soon !</p>
           {PROJECTS.map((project) => (
             <Card className="relative w-80 shrink-0" key={project.title}>
               <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
               <img
                 src="https://avatar.vercel.sh/shadcn1"
-                alt="Event cover"
+                alt="Project's cover"
                 className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
               />
               <CardHeader>
                 <CardAction>
-                  <Badge variant="secondary">Featured</Badge>
+                  <Badge variant="secondary">{project.feat}</Badge>
                 </CardAction>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription></CardDescription>
@@ -57,7 +57,7 @@ export default function Projects({ open, onOpenChange }: ProjectsProps) {
                 <p>{project.description}</p>
                 <div className="flex flex-row flex-wrap gap-2 my-2">
                   {project.stack.map((stack) => (
-                    <Badge>{stack}</Badge>
+                    <Badge className="bg-chart-2">{stack}</Badge>
                   ))}
                 </div>
               </section>

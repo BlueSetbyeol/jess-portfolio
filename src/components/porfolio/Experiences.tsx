@@ -23,7 +23,7 @@ export default function Experiences({ open, onOpenChange }: ExperiencesProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
         showCloseButton={false}
-        side="right"
+        side="left"
         className="data-[side=right]:w-5/6 gap-2"
       >
         <SheetHeader>

@@ -1,4 +1,17 @@
 import type { Project } from "./types";
+import cityHome from "../assets/city_canvas_home_desktop.png";
+import cityAccount from "../assets/city_canvas_inscription_mobile.png";
+import cityArt from "../assets/city_canvas_streetArtMap_tablette.png";
+import featzyHome from "../assets/featzy_home_phone.png";
+import featzyMap from "../assets/featzy_map_phone.png";
+import featzyMenu from "../assets/featzy_menu_phone.png";
+import featzyResa from "../assets/featzy_reservation_phone.png";
+import pokemonsterHome from "../assets/pokemonster_home_phone.png";
+import pokemonsterSell from "../assets/pokemonster_sell_tablette.png";
+import wikidataEnv from "../assets/wikidata_env_phone.png";
+import wikidataChart from "../assets/wikidata_env_tablette.png";
+import simplyfactHome from "../assets/simplyfact_home_mobile.png";
+import simplyfactResult from "../assets/simplyfact_result_phone.png";
 
 export const HERO = {
   eyebrow: "Web Developer - available now",
@@ -29,7 +42,7 @@ export const ABOUT = [
   { label: "Location", value: "Lyon, France · work from home", accent: false },
   {
     label: "Status",
-    value: "● Available from 2026, September 1st",
+    value: "● Available from 2026, October 1st",
     accent: true,
   },
   { label: "Focus", value: "Full Stack · Front End", accent: false },
@@ -127,9 +140,9 @@ export const EXPERIENCE = {
     },
     {
       period: "2025/2026",
-      title: "Featzy - Reserving made easy",
+      title: "Featzy - Reservations made easy",
       org: "My Digital School",
-      desc: "Along with a group of 5, building for nothing - not even an idea - a successfull project that would be worth producing.",
+      desc: "Along with a group of 5, building from nothing - not even an idea - a successfull project that would be worth producing.",
     },
     {
       period: "2024/2025",
@@ -174,36 +187,14 @@ export const EXPERIENCE = {
 
 export const PROJECTS: Project[] = [
   {
-    title: "City Canva",
-    description:
-      "A student project that aim to accompany you on your trail through the streets of the world. Identify the city you want to visit and discover the superbe sight of Street Art.",
-    stack: ["React", "TypeScript", "Express js", "Leaflet map"],
-    liveUrl: "https://new-city-canvas.jessica-couble.com/",
-    githubUrl: "https://github.com/BlueSetbyeol/New_City_Canvas",
-  },
-  {
-    title: "Pokemonster S.A.P.",
-    description:
-      "A project made as a fun little test to learn Next js. The aim would be to save pokemon and help them find a good home in a world of trading little monster for fun. A bit like a shelter.",
-    stack: ["Next js", "Tailwind"],
-    liveUrl: "https://pokemonster-eta.vercel.app/",
-    githubUrl: "https://github.com/BlueSetbyeol/pokemonster_sap",
-  },
-  {
-    title: "WikiData",
-    description:
-      "As a voluntary help, I took part in this project as a Front End developper and helped build it up to today's state. Working with a real and experienced Backend developper as well as a client kind of partener was a new and rich experience that I very much appreciated. The aim of the web app was to help French people answer to their questions regarding numbers and stats on certain element. We sadly had to stop without completing the idea as less and less volunteer were able to give time.",
-    stack: ["React js", "CSS", "Material UI"],
-    liveUrl: "https://wikidata.onrender.com/",
-    githubUrl: "https://github.com/association-work/stats_visualiser",
-  },
-  {
     title: "Featzy",
     description:
       "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
     stack: ["React js", "Tailwind", "ShadCN", "Google map", "Auth0"],
     liveUrl: "https://featzy.jessica-couble.com/",
     githubUrl: "https://github.com/BlueSetbyeol/featzy_front",
+    feat: "school · group",
+    images: [featzyHome, featzyMap, featzyMenu, featzyResa],
   },
   {
     title: "Simply Fact",
@@ -212,5 +203,37 @@ export const PROJECTS: Project[] = [
     stack: ["Laravel", "React", "Material UI", "S3"],
     liveUrl: "https://simplyfact-production-m8wtgc.laravel.cloud/",
     githubUrl: "https://github.com/BlueSetbyeol/simplyfact",
+    feat: "association · school · group",
+    images: [simplyfactHome, simplyfactResult],
+  },
+  {
+    title: "Pokemonster S.A.P.",
+    description:
+      "A project made as a fun little test to learn Next js. The aim would be to save pokemon and help them find a good home in a world of trading little monster for fun. A bit like a shelter.",
+    stack: ["Next js", "Tailwind"],
+    liveUrl: "https://pokemonster-eta.vercel.app/",
+    githubUrl: "https://github.com/BlueSetbyeol/pokemonster_sap",
+    feat: "personal",
+    images: [pokemonsterHome, pokemonsterSell],
+  },
+  {
+    title: "WikiData",
+    description:
+      "As a voluntary help, I took part in this project as a Front End developper and helped build it up to today's state. Working with a real and experienced Backend developper as well as a client kind of partener was a new and rich experience that I very much appreciated. The aim of the web app was to help French people answer to their questions regarding numbers and stats on certain element. We sadly had to stop without completing the idea as less and less volunteer were able to give time.",
+    stack: ["React js", "CSS", "Material UI"],
+    liveUrl: "https://wikidata.onrender.com/",
+    githubUrl: "https://github.com/association-work/stats_visualiser",
+    feat: "association · group",
+    images: [wikidataChart, wikidataEnv],
+  },
+  {
+    title: "City Canva",
+    description:
+      "A student project that aim to accompany you on your trail through the streets of the world. Identify the city you want to visit and discover the superbe sight of Street Art.",
+    stack: ["React", "TypeScript", "Express js", "Leaflet map"],
+    liveUrl: "https://new-city-canvas.jessica-couble.com/",
+    githubUrl: "https://github.com/BlueSetbyeol/New_City_Canvas",
+    feat: "school · group",
+    images: [cityHome, cityArt, cityAccount],
   },
 ];
