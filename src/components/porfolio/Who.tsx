@@ -33,7 +33,7 @@ export default function Who({ open, onOpenChange }: WhoProps) {
             <>
               <p>
                 After almost 10 years of experience working along customers in
-                the service area, I fell in love with building things and
+                the service area, I fell in love with building things,
                 especially on the web. What started as pure curiosity about
               </p>
               <p className="font-light text-chart-2 font-mono">
@@ -60,6 +60,12 @@ export default function Who({ open, onOpenChange }: WhoProps) {
               Looking for a junior role where I can grow fast, contribute from
               day one, and work alongside a team that cares about quality and
               craft.
+            </p>
+            <p>- - - -</p>
+            <p>
+              As a side note, I so love to create that I also sew clothes and
+              produce other miscelanous objects, when I'm not reading in my free
+              time.
             </p>
           </article>
           <h2 className="pt-6 text-chart-2">Informations :</h2>

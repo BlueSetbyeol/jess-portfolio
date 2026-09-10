@@ -37,7 +37,7 @@ function App() {
         <DesktopPresentation />
       </main>
       <footer className="h-[7svh] w-full border-t border-border py-2">
-        <div className="w-full px-2 flex flex-nowrap gap-2 relative z-0 items-center overflow-x-auto no-scrollbar">
+        <div className="w-full px-2 flex flex-nowrap lg:justify-center gap-2 relative z-0 items-center overflow-x-auto no-scrollbar">
           {HERO.tags.map((tag) => (
             <Button
               variant="outline"

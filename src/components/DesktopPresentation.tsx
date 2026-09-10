@@ -23,7 +23,7 @@ export default function DesktopPresentation() {
 
   return (
     <section className="hidden md:flex gap-4">
-      <HoverCard key={"left"} openDelay={10} closeDelay={10}>
+      <HoverCard key={"who"} openDelay={10} closeDelay={10}>
         <HoverCardTrigger>
           <Button
             variant={"outline"}
@@ -32,7 +32,6 @@ export default function DesktopPresentation() {
           >
             <SquareUser className="size-8 font-light" />
           </Button>
-          <Who open={open} onOpenChange={setOpen} />
         </HoverCardTrigger>
         <HoverCardContent side={"left"}>
           <div className="flex flex-col gap-1">
@@ -44,37 +43,87 @@ export default function DesktopPresentation() {
           </div>
         </HoverCardContent>
       </HoverCard>
-      <Button
-        variant={"outline"}
-        className="size-12 border-primary hover:bg-chart-4"
-        onClick={() => setOpenExperiences(true)}
-      >
-        <BicepsFlexed className="size-8 font-light" />
-      </Button>
-      <Experiences open={openExperiences} onOpenChange={setOpenExperiences} />
-      <Button
-        variant={"outline"}
-        className="size-12 border-primary hover:bg-chart-4"
-        onClick={() => setOpenProjects(true)}
-      >
-        <Layers className="size-8 font-light" />
-      </Button>
+      <Who open={open} onOpenChange={setOpen} />
+      <HoverCard key={"experiences"} openDelay={10} closeDelay={10}>
+        <HoverCardTrigger>
+          <Button
+            variant={"outline"}
+            className="size-12 border-primary hover:bg-chart-4"
+            onClick={() => setOpenExperiences(true)}
+          >
+            <BicepsFlexed className="size-8 font-light" />
+          </Button>
+        </HoverCardTrigger>
+        <HoverCardContent side={"bottom"}>
+          <div className="flex flex-col gap-1">
+            <h2 className="font-medium text-primary">Experiences</h2>
+            <p>
+              For a few years now I worked hard at learning and developing but I
+              did more beforehand that enriched my expertise in various field
+            </p>
+          </div>
+        </HoverCardContent>
+        <Experiences open={openExperiences} onOpenChange={setOpenExperiences} />
+      </HoverCard>
+      <HoverCard key={"projects"} openDelay={10} closeDelay={10}>
+        <HoverCardTrigger>
+          <Button
+            variant={"outline"}
+            className="size-12 border-primary hover:bg-chart-4"
+            onClick={() => setOpenProjects(true)}
+          >
+            <Layers className="size-8 font-light" />
+          </Button>
+        </HoverCardTrigger>
+        <HoverCardContent side={"bottom"}>
+          <div className="flex flex-col gap-1">
+            <h2 className="font-medium text-primary">Projects</h2>
+            <p>
+              A few projects I am proud of showing you, whether they are made
+              for school, associations or just myself
+            </p>
+          </div>
+        </HoverCardContent>
+      </HoverCard>
       <Projects open={openProjects} onOpenChange={setOpenProjects} />
-      <Button
-        variant={"outline"}
-        className="size-12 border-primary hover:bg-chart-4"
-        onClick={() => setOpenEducation(true)}
-      >
-        <GraduationCap className="size-8 font-light" />
-      </Button>
+      <HoverCard key={"education"} openDelay={10} closeDelay={10}>
+        <HoverCardTrigger>
+          <Button
+            variant={"outline"}
+            className="size-12 border-primary hover:bg-chart-4"
+            onClick={() => setOpenEducation(true)}
+          >
+            <GraduationCap className="size-8 font-light" />
+          </Button>
+        </HoverCardTrigger>
+        <HoverCardContent side={"bottom"}>
+          <div className="flex flex-col gap-1">
+            <h2 className="font-medium text-primary">Education</h2>
+            <p>
+              I like learning and understanding various concepts or fields and
+              it shows !
+            </p>
+          </div>
+        </HoverCardContent>
+      </HoverCard>
       <Education open={openEducation} onOpenChange={setOpenEducation} />
-      <Button
-        variant={"outline"}
-        className="size-12 border-primary hover:bg-chart-4"
-        onClick={() => setOpenContact(true)}
-      >
-        <Send className="size-8 font-light" />
-      </Button>
+      <HoverCard key={"contact"} openDelay={10} closeDelay={10}>
+        <HoverCardTrigger>
+          <Button
+            variant={"outline"}
+            className="size-12 border-primary hover:bg-chart-4"
+            onClick={() => setOpenContact(true)}
+          >
+            <Send className="size-8 font-light" />
+          </Button>
+        </HoverCardTrigger>
+        <HoverCardContent side={"right"}>
+          <div className="flex flex-col gap-1">
+            <h2 className="font-medium text-primary">Contact me</h2>
+            <p>I would loke to hear from you, here is how to contact me</p>
+          </div>
+        </HoverCardContent>
+      </HoverCard>
       <Contact open={openContact} onOpenChange={setOpenContact} />
     </section>
   );
