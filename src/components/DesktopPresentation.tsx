@@ -32,7 +32,6 @@ export default function DesktopPresentation() {
           >
             <SquareUser className="size-8 font-light" />
           </Button>
-          <Who open={open} onOpenChange={setOpen} />
         </HoverCardTrigger>
         <HoverCardContent side={"left"}>
           <div className="flex flex-col gap-1">
@@ -44,6 +43,7 @@ export default function DesktopPresentation() {
           </div>
         </HoverCardContent>
       </HoverCard>
+      <Who open={open} onOpenChange={setOpen} />
       <HoverCard key={"experiences"} openDelay={10} closeDelay={10}>
         <HoverCardTrigger>
           <Button
@@ -53,10 +53,6 @@ export default function DesktopPresentation() {
           >
             <BicepsFlexed className="size-8 font-light" />
           </Button>
-          <Experiences
-            open={openExperiences}
-            onOpenChange={setOpenExperiences}
-          />
         </HoverCardTrigger>
         <HoverCardContent side={"bottom"}>
           <div className="flex flex-col gap-1">
@@ -67,6 +63,7 @@ export default function DesktopPresentation() {
             </p>
           </div>
         </HoverCardContent>
+        <Experiences open={openExperiences} onOpenChange={setOpenExperiences} />
       </HoverCard>
       <HoverCard key={"projects"} openDelay={10} closeDelay={10}>
         <HoverCardTrigger>
@@ -77,7 +74,6 @@ export default function DesktopPresentation() {
           >
             <Layers className="size-8 font-light" />
           </Button>
-          <Projects open={openProjects} onOpenChange={setOpenProjects} />
         </HoverCardTrigger>
         <HoverCardContent side={"bottom"}>
           <div className="flex flex-col gap-1">
@@ -89,6 +85,7 @@ export default function DesktopPresentation() {
           </div>
         </HoverCardContent>
       </HoverCard>
+      <Projects open={openProjects} onOpenChange={setOpenProjects} />
       <HoverCard key={"education"} openDelay={10} closeDelay={10}>
         <HoverCardTrigger>
           <Button
@@ -98,7 +95,6 @@ export default function DesktopPresentation() {
           >
             <GraduationCap className="size-8 font-light" />
           </Button>
-          <Education open={openEducation} onOpenChange={setOpenEducation} />
         </HoverCardTrigger>
         <HoverCardContent side={"bottom"}>
           <div className="flex flex-col gap-1">
@@ -110,6 +106,7 @@ export default function DesktopPresentation() {
           </div>
         </HoverCardContent>
       </HoverCard>
+      <Education open={openEducation} onOpenChange={setOpenEducation} />
       <HoverCard key={"contact"} openDelay={10} closeDelay={10}>
         <HoverCardTrigger>
           <Button
@@ -119,7 +116,6 @@ export default function DesktopPresentation() {
           >
             <Send className="size-8 font-light" />
           </Button>
-          <Contact open={openContact} onOpenChange={setOpenContact} />
         </HoverCardTrigger>
         <HoverCardContent side={"right"}>
           <div className="flex flex-col gap-1">
@@ -128,6 +124,7 @@ export default function DesktopPresentation() {
           </div>
         </HoverCardContent>
       </HoverCard>
+      <Contact open={openContact} onOpenChange={setOpenContact} />
     </section>
   );
 }

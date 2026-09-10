@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
     stack: ["Laravel", "React", "Material UI", "S3"],
     liveUrl: "https://simplyfact-production-m8wtgc.laravel.cloud/",
     githubUrl: "https://github.com/BlueSetbyeol/simplyfact",
-    feat: "association · school · group",
+    feat: "association · school",
     images: [simplyfactHome, simplyfactResult],
   },
   {
