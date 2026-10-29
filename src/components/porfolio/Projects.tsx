@@ -37,13 +37,13 @@ export default function Projects({ open, onOpenChange }: ProjectsProps) {
             that I hope you will enjoy too
           </DialogDescription>
         </DialogHeader>
-        <section className="-mx-4 no-scrollbar h-[75vh] overflow-x-auto px-4 py-4 flex flex-row gap-4 items-start w-full shrink-0">
+        <section className="-mx-4 h-[75vh] overflow-x-auto no-scrollbar px-4 py-4 flex flex-row gap-4 items-start w-full shrink-0">
           {PROJECTS.map((project) => (
             <Card
-              className="w-70 shrink-0 mt-3 pt-0 flex flex-col items-center h-full overflow-y-auto no-scrollbar justify-between"
+              className="w-70 shrink-0 mt-3 pt-0 flex flex-col items-center h-full justify-between"
               key={project.title}
             >
-              <section className="flex flex-col w-full gap-4 items-center">
+              <section className="flex flex-col w-full gap-4 items-center h-[68vh] overflow-y-auto no-scrollbar">
                 <ImageSelector images={project.images} />
                 <CardHeader className="w-full">
                   <CardAction>
@@ -69,11 +69,13 @@ export default function Projects({ open, onOpenChange }: ProjectsProps) {
                     GitHub
                   </a>
                 </Button>
-                <Button asChild className="w-18">
-                  <a href={project.liveUrl} target="_blank">
-                    Live
-                  </a>
-                </Button>
+                {project.liveUrl !== "" && (
+                  <Button asChild className="w-18">
+                    <a href={project.liveUrl} target="_blank">
+                      Live
+                    </a>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}

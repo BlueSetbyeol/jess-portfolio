@@ -8,10 +8,15 @@ import featzyMenu from "../assets/featzy_menu_phone.png";
 import featzyResa from "../assets/featzy_reservation_phone.png";
 import pokemonsterHome from "../assets/pokemonster_home_phone.png";
 import pokemonsterSell from "../assets/pokemonster_sell_tablette.png";
+import pokemonsterBuy from "../assets/pokemonster_buy_computer.png";
 import wikidataEnv from "../assets/wikidata_env_phone.png";
 import wikidataChart from "../assets/wikidata_env_tablette.png";
 import simplyfactHome from "../assets/simplyfact_home_mobile.png";
 import simplyfactResult from "../assets/simplyfact_result_phone.png";
+import simplyfactChoice from "../assets/simplyfact_choices_phone.png";
+import simplyfactChoiceResult from "../assets/simplyfact_choices_result_phone.png";
+import simplyfactMeal from "../assets/simplyfact_meal_phone.png";
+import simplyfactSummary from "../assets/simplyfact_summary_phone.png";
 
 export const HERO = {
   eyebrow: "Web Developer - available now",
@@ -189,7 +194,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Featzy",
     description:
-      "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
+      "The main project for the first halp of year 2026, realised in a group of 6 students, in which 2 where developping the project and I was in charge of the front end. Our aim was to offer a new solution in the restaurant reservation's area. We aimed at creating an app that would help clients to both book a table but also choose their meal in advance so that they could enjoy the most of their time in the restaurant.",
     stack: ["React js", "Tailwind", "ShadCN", "Google map", "Auth0"],
     liveUrl: "https://featzy.jessica-couble.com/",
     githubUrl: "https://github.com/BlueSetbyeol/featzy_front",
@@ -199,12 +204,19 @@ export const PROJECTS: Project[] = [
   {
     title: "Simply Fact",
     description:
-      "A short description of what this app does and why it matters. Describe the problem it solves and what you learned.",
+      "This project had for aim to answer a real accounting need for a speleology association. The application answer the question of simplicity and efficiency when participants had to declare an expenses claim while helping the association. Realised in 1 month under the guidance of our teacher, a member of the said association.",
     stack: ["Laravel", "React", "Material UI", "S3"],
-    liveUrl: "https://simplyfact-production-m8wtgc.laravel.cloud/",
+    liveUrl: "",
     githubUrl: "https://github.com/BlueSetbyeol/simplyfact",
     feat: "association · school",
-    images: [simplyfactHome, simplyfactResult],
+    images: [
+      simplyfactHome,
+      simplyfactChoice,
+      simplyfactChoiceResult,
+      simplyfactMeal,
+      simplyfactResult,
+      simplyfactSummary,
+    ],
   },
   {
     title: "Pokemonster S.A.P.",
@@ -214,7 +226,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://pokemonster-eta.vercel.app/",
     githubUrl: "https://github.com/BlueSetbyeol/pokemonster_sap",
     feat: "personal",
-    images: [pokemonsterHome, pokemonsterSell],
+    images: [pokemonsterHome, pokemonsterSell, pokemonsterBuy],
   },
   {
     title: "WikiData",
