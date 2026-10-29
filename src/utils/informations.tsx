@@ -8,6 +8,7 @@ import featzyMenu from "../assets/featzy_menu_phone.png";
 import featzyResa from "../assets/featzy_reservation_phone.png";
 import pokemonsterHome from "../assets/pokemonster_home_phone.png";
 import pokemonsterSell from "../assets/pokemonster_sell_tablette.png";
+import pokemonsterBuy from "../assets/pokemonster_buy_computer.png";
 import wikidataEnv from "../assets/wikidata_env_phone.png";
 import wikidataChart from "../assets/wikidata_env_tablette.png";
 import simplyfactHome from "../assets/simplyfact_home_mobile.png";
@@ -225,7 +226,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://pokemonster-eta.vercel.app/",
     githubUrl: "https://github.com/BlueSetbyeol/pokemonster_sap",
     feat: "personal",
-    images: [pokemonsterHome, pokemonsterSell],
+    images: [pokemonsterHome, pokemonsterSell, pokemonsterBuy],
   },
   {
     title: "WikiData",
